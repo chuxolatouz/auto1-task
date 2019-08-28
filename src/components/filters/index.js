@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
+import { loadManufacturers } from '../../store/actions/manufacturers'
 import './index.css'
 
-const Filters = () => (
-    <div id="Filters">
-        <span>Filters</span>
-    </div>
-)
+class Filters extends Component {
+    componentDidMount() {
+        this.props.loadManufacturers()
+    }
+    render() {
+        return (
+            <div id="Filters">
+                <span>Filters</span>
+            </div>
+        )
+    }
+} 
 
-export default Filters
+const mS = state => {
+    return {
+        manufacturers: state.filterReducer.manufacturers
+    }
+}
+
+const mD = {
+    loadManufacturers
+}
+
+export default connect(mS,mD)(Filters)
