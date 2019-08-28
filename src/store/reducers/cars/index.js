@@ -22,6 +22,8 @@ const initialState = {
 const carsReducer = (state = initialState, action) => {
     switch(action.type) {
         case GET_CARS:
+            console.log(action.payload);
+            
             return {
                 ...state,
                 ...action.payload

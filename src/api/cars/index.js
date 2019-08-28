@@ -1,13 +1,13 @@
 import fetch from '../axios'
 
 export const fetchCars = (params = {}) => fetch
-    .get('/cars', params)
+    .get('cars', params)
     .then( (response) => {
-        if (response.success)
+        if (response.status === 201)
             return {
                 cars: response.data.cars,
                 total: response.data.totalCarsCount,
-                page: response.data.totalPageCounts
+                page: response.data.totalPageCount
             }
         return null
     })
