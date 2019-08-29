@@ -1,4 +1,5 @@
 import { GET_MANUFACTURERS } from '../../actions/manufacturers'
+import { GET_COLORS } from '../../actions/colors'
 
 const initialState = {
     activeColor: '',
@@ -13,6 +14,12 @@ const filterReducers = (state = initialState, action) => {
             return {
                 ...state,
                 manufacturers: action.payload.manufacturers
+            }
+
+        case GET_COLORS:
+            return {
+                ...state,
+                colors: action.payload.colors
             }
 
         default:

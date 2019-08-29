@@ -2,11 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { loadManufacturers } from '../../store/actions/manufacturers'
+import { loadColors } from '../../store/actions/colors'
 import './index.css'
 
 class Filters extends Component {
     componentDidMount() {
-        this.props.loadManufacturers()
+        const { loadManufacturers, loadColors } = this.props
+        loadManufacturers()
+        loadColors()
     }
     render() {
         return (
@@ -19,12 +22,14 @@ class Filters extends Component {
 
 const mS = state => {
     return {
-        manufacturers: state.filterReducer.manufacturers
+        manufacturers: state.filterReducer.manufacturers,
+        colors: state.filterReducer.colors
     }
 }
 
 const mD = {
-    loadManufacturers
+    loadManufacturers,
+    loadColors
 }
 
 export default connect(mS,mD)(Filters)
