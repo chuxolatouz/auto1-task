@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: space-between;
   font-family: var(--roboto-regular);
-  font-size: 12px;
+  font-size: 18px;
   color: white;
   border-bottom: 2px var(--gray) solid;
 }

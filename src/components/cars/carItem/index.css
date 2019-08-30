@@ -1,0 +1,36 @@
+.Car-Item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    border: 1px var(--gray) solid;
+    margin: 5px;
+}
+
+.Car-Image{
+    min-width: 80px;
+    min-height: 80px;
+    margin: 5px;
+}
+.Car-Image::before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    background-color: var(--gray); 
+}
+
+.Car-Details {
+    display: flex;
+    flex-direction: column;
+}
+
+.Car-Details h3{
+    margin: 5px;
+}
+
+.Car-Info {
+    margin: 10px;
+}
+

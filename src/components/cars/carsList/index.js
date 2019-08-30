@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import CarItem from '../carItem'
 import { loadCars } from '../../../store/actions/cars'
+
+import './index.css'
 
 class CarsList extends Component {
     componentDidMount(){
@@ -12,7 +15,7 @@ class CarsList extends Component {
         const { carsList } = this.props
         return (
             <div id="CarsList">
-                {carsList.map((car) => <p key={car.stockNumber}>{car.manufacturerName}</p>)}
+                {carsList.map((car) => <CarItem key={car.stockNumber} {...car} />)}
             </div>
         )
     }
