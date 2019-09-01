@@ -21,7 +21,7 @@ export const fetchCarDetail = (carId) => fetch
     .get(`cars/${carId}`)
     .then((response) => {
         if(response.status === 201)
-            return { car: response.data }
+            return { car: response.data.car }
         return null
     })
     .catch((error) => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import './index.css'
 
@@ -16,7 +17,7 @@ const CarItem = ({
         <div className="Car-Details">
             <h3>{manufacturerName} {modelName}</h3>
             <span className="Car-Info">Stock #{stockNumber} - {mileage.number}{mileage.unit} - {fuelType} - {color}</span>
-            <a href="/#">View Detail</a>
+            <Link to={`/cars/${stockNumber}`}>View Details</Link>
         </div>
     </div>
 )

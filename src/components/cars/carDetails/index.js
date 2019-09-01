@@ -3,6 +3,12 @@ import { connect } from 'react-redux'
 import { loadCarDetail } from '../../../store/actions/cars'
 
 class CarDetails extends Component {
+
+    componentDidMount() {
+        this.props.loadCarDetail(this.props.match.params.id)
+        
+    }
+
     render() {
         return(
             <div className="Car-Details">
@@ -14,7 +20,7 @@ class CarDetails extends Component {
 
 const mS = state => {
     return {
-        car: state.carDetails
+        car: state.carsReducer.details
     }
 }
 const mD = {

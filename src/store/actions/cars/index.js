@@ -12,7 +12,7 @@ export const loadCars = () => dispatch => fetchCars()
 
 export const loadCarDetail = (carId) => dispatch => fetchCarDetail(carId)
     .then((response) => {
-        dispatch({ type: GET_CAR_DETAIL, payload: response})
+        dispatch({ type: GET_CAR_DETAIL, payload: response.car})
     }).catch((err) => {
         if(err) console.log(err)
     })

@@ -1,4 +1,4 @@
-import { GET_CARS } from '../../actions/cars'
+import { GET_CARS, GET_CAR_DETAIL } from '../../actions/cars'
 
 const initialState = {
     details: {
@@ -25,6 +25,11 @@ const carsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.payload
+            }
+        case  GET_CAR_DETAIL:
+            return {
+                ...state,
+                details: action.payload
             }
         default:
             return state
