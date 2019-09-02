@@ -3,10 +3,6 @@ import { connect } from 'react-redux'
 import { loadCars } from '../../store/actions/cars'
 
 class Paginator extends Component {
-    parsePage() {
-        const { page, total } = this.props
-        return page / total
-    }
     render() {
         const { loadCars, page, total, count } = this.props
         return (
