@@ -32,14 +32,25 @@
 
 }
 
+.App-Footer {
+  position: absolute;
+  background-color: white;
+  height: 80px;
+  font-size: 18px;
+  color: var(--black);
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 span {
   margin: 18px;
 }
 
-.App-Footer {
-  height: 80px;
+.App-link {
+  color: var(--orage);
 }
 
-.App-link {
-  color: #61dafb;
+h3 {
+  font-size: 18px;
 }

@@ -1,7 +1,6 @@
 import React from 'react'
 import Cars from '../cars'
 import Filters from '../filters'
-import Header from './header'
 
 import './App.css'
 

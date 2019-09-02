@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { loadCarDetail } from '../../../store/actions/cars'
 
+import './index.css'
+
 class CarDetails extends Component {
 
     componentDidMount() {
@@ -10,9 +12,28 @@ class CarDetails extends Component {
     }
 
     render() {
+        const {
+            modelName,
+            manufacturerName,
+            stockNumber,
+            mileage,
+            fuelType,
+            color,
+            pictureUrl
+        } = this.props.car
+        
         return(
-            <div className="Car-Details">
-                <span>{this.props.car.manufacturerName}</span>
+            <div id="Car-Details">
+                    <img className="Car-Image-Detail" src={pictureUrl} alt="Car"/>
+                <div className="Car-Info">
+                    <div className="Car-Content">
+                        <h3>{manufacturerName} {modelName}</h3>
+                        <p>Stock #{stockNumber} - {mileage.number}{mileage.km} - {fuelType} - {color}</p>
+                    </div>
+                    <div className="Car-Favorite">
+                        <button >Save</button>
+                    </div>
+                </div>
             </div>
         )
     }

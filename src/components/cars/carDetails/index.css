@@ -1,0 +1,28 @@
+#Car-Details {
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.Car-Image-Detail {
+    margin: 0;    
+    height: 200px;
+}
+.Car-Image-Detail::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    background-color: var(--gray);
+    width: 100%;
+    height: 200px;
+}
+
+
+
+.Car-Info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
