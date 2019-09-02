@@ -6,7 +6,7 @@ import { createBrowserHistory } from 'history'
 import App from '../components/app'
 import CarDetails from '../components/cars/carDetails'
 import Header from '../components/app/header'
-import Footer from '../components/app/footer'
+// import Footer from '../components/app/footer'
 
 const history = createBrowserHistory()
 
@@ -18,7 +18,7 @@ const Root = ({ store }) => (
                 <Redirect exact from="/" to="/cars" />
                 <Route exact path="/cars" component={App}/>
                 <Route path="/cars/:id" component={CarDetails} />
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </Router>
     </Provider>

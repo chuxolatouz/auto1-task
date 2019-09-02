@@ -8,7 +8,9 @@ import './index.css'
 
 class CarsList extends Component {
     componentDidMount(){
-        this.props.loadCars()
+        const { page, loadCars } = this.props
+
+        loadCars({ page })
     }
     render(){
         
@@ -23,7 +25,8 @@ class CarsList extends Component {
 
 const mS = state => {
     return {
-        carsList: state.carsReducer.cars
+        carsList: state.carsReducer.cars,
+        page: state.carsReducer.page,
     }
 }
 

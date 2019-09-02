@@ -7,3 +7,17 @@
     border: 1px var(--gray) solid;
     padding: 12px;
 }
+
+.Available-Cars {
+    display: flex;
+    justify-content: space-around;
+}
+
+.Showing-Cars {
+    display: flex;
+    flex-direction: column;
+}
+
+.Sort-Cars {
+    align-self: center;
+}

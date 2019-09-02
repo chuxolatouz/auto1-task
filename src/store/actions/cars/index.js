@@ -3,7 +3,7 @@ import { fetchCars, fetchCarDetail } from '../../../api/cars'
 export const GET_CARS = 'GET_CARS'
 export const GET_CAR_DETAIL = 'GET_CAR_DETAIL'
 
-export const loadCars = () => dispatch => fetchCars()
+export const loadCars = (params = {}) => dispatch => fetchCars(params)
     .then((response) => {
         dispatch({ type: GET_CARS, payload: response })
     }).catch((err) => {

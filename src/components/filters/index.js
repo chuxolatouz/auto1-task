@@ -37,15 +37,17 @@ class Filters extends Component {
                 <div className="Filter-Content">
 
                     <div>
-                        <span>All car colors</span>
+                        <span>colors</span>
                         <Select
+                            placeholder="All car colors"
                             value={selectedColor}
                             onChange={this.handleColor}
                             options={Filters.parseOptions(colors)} />
                     </div>
                     <div>
-                        <span>All manufacturers</span>
+                        <span>manufacturers</span>
                         <Select
+                            placeholder="All manufacturers"
                             value={selectedManufacturer}
                             onChange={this.handleManufacturer}
                             options={Filters.parseOptions(manufacturers)} />
