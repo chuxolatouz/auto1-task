@@ -24,8 +24,6 @@ const carsReducer = (state = initialState, action) => {
         case GET_CARS:
             return {
                 ...state,
-                cars: action.payload.cars,
-                count: state.count + 1,
                 ...action.payload
             }
         case  GET_CAR_DETAIL:

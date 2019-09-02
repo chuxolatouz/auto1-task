@@ -4,6 +4,8 @@ import Select from 'react-select'
 
 import { loadManufacturers } from '../../store/actions/manufacturers'
 import { loadColors } from '../../store/actions/colors'
+import { setFilters } from '../../store/actions/filters'
+import { loadCars } from '../../store/actions/cars'
 import './index.css'
 
 class Filters extends Component {
@@ -29,6 +31,21 @@ class Filters extends Component {
     handleManufacturer = selectedManufacturer => {
         this.setState({ selectedManufacturer })
     }
+    filterCars = () =>  {
+        const { selectedColor, selectedManufacturer } = this.state
+        const { setFilters, loadCars, count, sort } = this.props
+        setFilters({
+            activeColor: selectedColor.value,
+            activeManufacturer: selectedManufacturer.value
+        })
+        
+        loadCars({
+            color: selectedColor.value,
+            manufacturer: selectedManufacturer.value,
+            page: count,
+            sort
+        })
+    }
     render() {
         const { selectedColor, selectedManufacturer } = this.state
         const { colors, manufacturers } = this.props
@@ -52,8 +69,7 @@ class Filters extends Component {
                             onChange={this.handleManufacturer}
                             options={Filters.parseOptions(manufacturers)} />
                     </div>
-
-                    <button onClick={() => {}}>Filter</button>
+                    <button onClick={this.filterCars}>Filter</button>
                         </div>
             </div>
         )
@@ -63,13 +79,19 @@ class Filters extends Component {
 const mS = state => {
     return {
         manufacturers: state.filterReducer.manufacturers,
-        colors: state.filterReducer.colors
+        colors: state.filterReducer.colors,
+        activeColor: state.filterReducer.activeColor,
+        activeManufacturer: state.filterReducer.activeManufacturer,
+        activeSort: state.filterReducer.activeSort,
+        count: state.carsReducer.count,
     }
 }
 
 const mD = {
     loadManufacturers,
-    loadColors
+    loadColors,
+    setFilters,
+    loadCars
 }
 
 export default connect(mS,mD)(Filters)

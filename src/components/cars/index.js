@@ -33,8 +33,8 @@ const Cars = ({ page, total }) => (
 
 const mS = state => {
     return {
-        page: state.carsReducer.page ? state.carsReducer.page / 10 : 0,
-        total: state.carsReducer.total ? state.carsReducer.total / 10 : 0
+        page: state.carsReducer.page,
+        total: state.carsReducer.total
     }
 }
 

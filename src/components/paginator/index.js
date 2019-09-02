@@ -8,12 +8,12 @@ class Paginator extends Component {
         return page / total
     }
     render() {
-        const { loadCars, page, total } = this.props
+        const { loadCars, page, total, count } = this.props
         return (
             <div className="Paginator">
                 <button onClick={() => { loadCars({ page: 1}) }}>First</button>
                 <button onClick={() => { loadCars({ page: page - 100 })}}>Previous</button>
-                <span> Page {page / 100} of {total / 100}</span>
+                <span> Page {page} of {total}</span>
                 <button onClick={() => { loadCars({ page: page/100 + 1 }) }}>Next</button>
                 <button onClick={() => { loadCars({ page: total }) }}>Last</button>
             </div>
