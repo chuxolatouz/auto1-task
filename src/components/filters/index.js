@@ -1,20 +1,58 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Select from 'react-select'
 
 import { loadManufacturers } from '../../store/actions/manufacturers'
 import { loadColors } from '../../store/actions/colors'
 import './index.css'
 
 class Filters extends Component {
+    static parseOptions = (options) => {
+        return options.map( (option) => {
+            if(option.name)
+                return { value: option.name, label: option.name }
+            return { value: option, label: option }
+        })
+    }
+    state = {
+        selectedColor: '',
+        selectedManufacturer: ''
+    }
     componentDidMount() {
         const { loadManufacturers, loadColors } = this.props
         loadManufacturers()
         loadColors()
     }
+    handleColor = selectedColor => {
+        this.setState({ selectedColor })
+    }
+    handleManufacturer = selectedManufacturer => {
+        this.setState({ selectedManufacturer })
+    }
     render() {
+        const { selectedColor, selectedManufacturer } = this.state
+        const { colors, manufacturers } = this.props
         return (
             <div id="Filters">
-                <span>Filters</span>
+                <div className="Filter-Content">
+
+                    <div>
+                        <span>All car colors</span>
+                        <Select
+                            value={selectedColor}
+                            onChange={this.handleColor}
+                            options={Filters.parseOptions(colors)} />
+                    </div>
+                    <div>
+                        <span>All manufacturers</span>
+                        <Select
+                            value={selectedManufacturer}
+                            onChange={this.handleManufacturer}
+                            options={Filters.parseOptions(manufacturers)} />
+                    </div>
+
+                    <button onClick={() => {}}>Filter</button>
+                        </div>
             </div>
         )
     }
