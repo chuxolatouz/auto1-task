@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { loadCarDetail } from '../../../store/actions/cars'
+import { setFavorite } from '../../../store/actions/favorites'
 
 import './index.css'
 
@@ -32,7 +33,7 @@ class CarDetails extends Component {
                     </div>
                     <div className="Car-Favorite">
                         <div className="Favorite-Description">If you like this car, click the button and save it in your collection of favourite items.</div>
-                        <button >Save</button>
+                        <button onClick={() => {setFavorite(this.props.car)}}>Save</button>
                     </div>
                 </div>
             </div>
