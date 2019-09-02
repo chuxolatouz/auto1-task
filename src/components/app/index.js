@@ -7,13 +7,10 @@ import './App.css'
 
 const App = () => {
   return (
-    <div className="App">
-      <Header />
       <div className="App-Content">
         <Filters />
         <Cars />
       </div>
-    </div>
   );
 }
 
