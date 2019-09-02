@@ -48,7 +48,23 @@ span {
 }
 
 .App-link {
-  color: var(--orage);
+  color: var(--orange);
+  text-decoration: none;
+}
+.App-link:hover {
+  color: var(--dark-orange);
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--orange);
+  width: 128px;
+  height: 32px;
+  border: var(--orange);
+  border-radius: 3px;
+  margin:18px;
+  color: white;
 }
 
 h3 {

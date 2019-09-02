@@ -25,12 +25,13 @@ class CarDetails extends Component {
         return(
             <div id="Car-Details">
                     <img className="Car-Image-Detail" src={pictureUrl} alt="Car"/>
-                <div className="Car-Info">
+                <div className="Car-Info-Detail">
                     <div className="Car-Content">
                         <h3>{manufacturerName} {modelName}</h3>
                         <p>Stock #{stockNumber} - {mileage.number}{mileage.km} - {fuelType} - {color}</p>
                     </div>
                     <div className="Car-Favorite">
+                        <div className="Favorite-Description">If you like this car, click the button and save it in your collection of favourite items.</div>
                         <button >Save</button>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ const CarItem = ({
         <div className="Car-Details">
             <h3>{manufacturerName} {modelName}</h3>
             <span className="Car-Info">Stock #{stockNumber} - {mileage.number}{mileage.unit} - {fuelType} - {color}</span>
-            <Link to={`/cars/${stockNumber}`}>View Details</Link>
+            <Link className="App-link" to={`/cars/${stockNumber}`}>View Details</Link>
         </div>
     </div>
 )

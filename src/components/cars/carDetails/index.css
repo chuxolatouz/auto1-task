@@ -1,13 +1,13 @@
 #Car-Details {
     display: flex;
     flex-direction: column;
-    
-    
 }
+
 .Car-Image-Detail {
     margin: 0;    
     height: 200px;
 }
+
 .Car-Image-Detail::before {
     content: ' ';
     display: block;
@@ -17,12 +17,24 @@
     height: 200px;
 }
 
-
-
-.Car-Info {
+.Car-Info-Detail {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    
+    justify-content: space-between;
+    max-width: 800px;
+    width: 100%;
+    align-items: center;
+    margin: 24px auto;
+    color: var(--black)
 }
 
+.Car-Favorite {
+    padding: 12px;
+    border: 1px var(--gray) solid;
+    font-size: 14px;
+    width: 250px;
+}
+
+.Favorite-Description {
+    color: var(--black)
+}
